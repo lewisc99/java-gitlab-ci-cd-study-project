@@ -4,10 +4,10 @@ pipeline {
         stage("Build")
         {
             agent {
-                docker {image: 'openjdk:11'}
+                docker {image: 'maven'}
             }
             steps {
-                sh 'mvn -B test --file pom.xml'
+                sh 'mvn package -Dmaven.test.skip=true'
             }
         }
     }
