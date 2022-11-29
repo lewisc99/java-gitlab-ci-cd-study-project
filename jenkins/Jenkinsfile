@@ -1,17 +1,15 @@
 pipeline {
     agent any
 
-    environment {
-        POM_VERSION = ""
-    }
+  
 
     stages {
         stage('Build') {
             agent {
-                docker { image 'maven' }
+                docker { image 'openjdk:11' }
             }
             steps {
-                sh "mvn package -Dmaven.test.skip=true"
+                sh "mvn -B test --file pom.xml"
                
             }
         }
