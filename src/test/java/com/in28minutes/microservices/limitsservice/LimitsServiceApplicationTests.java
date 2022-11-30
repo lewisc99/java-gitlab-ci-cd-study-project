@@ -26,7 +26,7 @@ class LimitsServiceApplicationTests {
 	{
 		LimitsController limitsController = new LimitsController();
 
-		assertNull(limitsController);
+		assertNotNull(limitsController);
 
 	}
 
