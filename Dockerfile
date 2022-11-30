@@ -8,3 +8,4 @@ RUN apt-get install -y maven
 COPY  ./ ./app
 RUN mvn -f ./app/pom.xml clean package
 CMD ["java","-jar","./app/target/limits-service.jar"]
+RUN ["chmod", "+x", "/usr/src/app/docker-entrypoint.sh"]
